@@ -1,0 +1,109 @@
+{
+  "name": "RailSense Pro Design System",
+  "version": "1.0.0",
+  "color": {
+    "background": {
+      "default": { "value": "#050814", "type": "color", "description": "Primary cosmic dark background" },
+      "subtle": { "value": "#090E20", "type": "color", "description": "Sidebar & navigation drawer background" },
+      "elevated": { "value": "#0D1528", "type": "color", "description": "Card and table background" },
+      "overlay": { "value": "rgba(5, 8, 20, 0.85)", "type": "color", "description": "Modal backdrop" }
+    },
+    "brand": {
+      "cyan": { "value": "#00F2FE", "type": "color", "description": "Primary telemetry neon cyan" },
+      "blue": { "value": "#4FACFE", "type": "color", "description": "Secondary gradient blue" },
+      "violet": { "value": "#8B5CF6", "type": "color", "description": "AI & maintenance accent violet" }
+    },
+    "status": {
+      "normal": {
+        "text": { "value": "#10B981", "type": "color" },
+        "bg": { "value": "rgba(16, 185, 129, 0.15)", "type": "color" },
+        "border": { "value": "rgba(16, 185, 129, 0.35)", "type": "color" }
+      },
+      "warning": {
+        "text": { "value": "#F59E0B", "type": "color" },
+        "bg": { "value": "rgba(245, 158, 11, 0.15)", "type": "color" },
+        "border": { "value": "rgba(245, 158, 11, 0.35)", "type": "color" }
+      },
+      "critical": {
+        "text": { "value": "#FF3366", "type": "color" },
+        "bg": { "value": "rgba(255, 51, 102, 0.20)", "type": "color" },
+        "border": { "value": "rgba(255, 51, 102, 0.45)", "type": "color" },
+        "glow": { "value": "rgba(255, 51, 102, 0.60)", "type": "color" }
+      },
+      "maintenance": {
+        "text": { "value": "#A78BFA", "type": "color" },
+        "bg": { "value": "rgba(139, 92, 246, 0.15)", "type": "color" },
+        "border": { "value": "rgba(139, 92, 246, 0.35)", "type": "color" }
+      }
+    },
+    "text": {
+      "primary": { "value": "#FFFFFF", "type": "color" },
+      "secondary": { "value": "#E2E8F0", "type": "color" },
+      "muted": { "value": "#94A3B8", "type": "color" },
+      "subtle": { "value": "#64748B", "type": "color" },
+      "disabled": { "value": "#334155", "type": "color" }
+    },
+    "border": {
+      "subtle": { "value": "rgba(255, 255, 255, 0.06)", "type": "color" },
+      "default": { "value": "rgba(255, 255, 255, 0.10)", "type": "color" },
+      "glow": { "value": "rgba(0, 242, 254, 0.35)", "type": "color" }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "sans": { "value": "Plus Jakarta Sans, -apple-system, sans-serif", "type": "fontFamilies" },
+      "mono": { "value": "JetBrains Mono, monospace", "type": "fontFamilies" }
+    },
+    "fontSize": {
+      "display": { "value": "36px", "type": "fontSizes" },
+      "h1": { "value": "28px", "type": "fontSizes" },
+      "h2": { "value": "22px", "type": "fontSizes" },
+      "h3": { "value": "18px", "type": "fontSizes" },
+      "body": { "value": "13px", "type": "fontSizes" },
+      "caption": { "value": "11px", "type": "fontSizes" },
+      "micro": { "value": "10px", "type": "fontSizes" }
+    },
+    "fontWeight": {
+      "regular": { "value": "400", "type": "fontWeights" },
+      "medium": { "value": "500", "type": "fontWeights" },
+      "semibold": { "value": "600", "type": "fontWeights" },
+      "bold": { "value": "700", "type": "fontWeights" },
+      "extrabold": { "value": "800", "type": "fontWeights" }
+    }
+  },
+  "spacing": {
+    "xs": { "value": "4px", "type": "spacing" },
+    "sm": { "value": "8px", "type": "spacing" },
+    "md": { "value": "16px", "type": "spacing" },
+    "lg": { "value": "24px", "type": "spacing" },
+    "xl": { "value": "32px", "type": "spacing" },
+    "2xl": { "value": "48px", "type": "spacing" }
+  },
+  "borderRadius": {
+    "sm": { "value": "8px", "type": "borderRadius" },
+    "md": { "value": "12px", "type": "borderRadius" },
+    "lg": { "value": "16px", "type": "borderRadius" },
+    "xl": { "value": "24px", "type": "borderRadius" },
+    "full": { "value": "9999px", "type": "borderRadius" }
+  },
+  "boxShadow": {
+    "glass": {
+      "value": {
+        "x": "0", "y": "16", "blur": "40", "spread": "0", "color": "rgba(0, 0, 0, 0.45)"
+      },
+      "type": "boxShadow"
+    },
+    "glowCyan": {
+      "value": {
+        "x": "0", "y": "0", "blur": "25", "spread": "0", "color": "rgba(0, 242, 254, 0.35)"
+      },
+      "type": "boxShadow"
+    },
+    "glowDanger": {
+      "value": {
+        "x": "0", "y": "0", "blur": "30", "spread": "0", "color": "rgba(255, 51, 102, 0.45)"
+      },
+      "type": "boxShadow"
+    }
+  }
+}

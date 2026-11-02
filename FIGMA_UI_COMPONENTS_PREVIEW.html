@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RailSense Pro — Figma Component Library & State Catalog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F8FAFC;
+      background-image: radial-gradient(at 15% 15%, rgba(14, 165, 233, 0.12) 0px, transparent 55%),
+                        radial-gradient(at 85% 20%, rgba(99, 102, 241, 0.10) 0px, transparent 50%),
+                        radial-gradient(at 80% 85%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+                        radial-gradient(at 20% 90%, rgba(16, 185, 129, 0.08) 0px, transparent 55%),
+                        #F8FAFC;
+      background-attachment: fixed;
+      color: #334155;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+    .skeleton-shimmer {
+      background: linear-gradient(90deg, rgba(148, 163, 184, 0.08) 25%, rgba(148, 163, 184, 0.22) 50%, rgba(148, 163, 184, 0.08) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.8s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.9; }
+      50% { transform: scale(1.6); opacity: 0; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    .copy-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35);
+      transform: translateY(100px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 100;
+    }
+    .copy-toast.show {
+      transform: translateY(0);
+    }
+    h1, h2, h3, .text-white {
+      color: #0F172A !important;
+    }
+    .text-slate-400 {
+      color: #64748B !important;
+    }
+    .text-slate-300 {
+      color: #475569 !important;
+    }
+    .border-white\/10 {
+      border-color: rgba(226, 232, 240, 0.9) !important;
+    }
+    .bg-white\/5 {
+      background-color: rgba(241, 245, 249, 0.85) !important;
+      color: #334155 !important;
+    }
+    .bg-white\/10 {
+      background-color: rgba(226, 232, 240, 0.9) !important;
+    }
+    .bg-black\/40 {
+      background-color: rgba(241, 245, 249, 0.95) !important;
+    }
+    .bg-rose-950\/20 {
+      background-color: rgba(254, 242, 242, 0.9) !important;
+    }
+    .text-rose-200\/80 {
+      color: #991b1b !important;
+    }
+    .text-rose-300 {
+      color: #dc2626 !important;
+    }
+  </style>
+</head>
+<body class="p-8 max-w-7xl mx-auto space-y-12">
+
+  <div id="copy-toast" class="copy-toast">✓ Component SVG Copied! Paste directly in Figma (Ctrl+V)</div>
+
+  <!-- Header -->
+  <header class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 font-mono text-xs font-bold border border-cyan-500/30">FIGMA COMPONENT CATALOG</span>
+        <span class="text-slate-400 text-xs font-mono">v1.0 AUTO-LAYOUT KIT</span>
+      </div>
+      <h1 class="text-3xl font-black text-white mt-2">RailSense Pro Component Library & States</h1>
+      <p class="text-sm text-slate-400 mt-1">Organized design components, status indicators, and edge case states for Figma import.</p>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs transition shadow-lg shadow-cyan-500/25">
+        ← Open Live Application
+      </a>
+      <a href="DESIGN_SYSTEM_AND_FIGMA_SPECS.md" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-semibold transition border border-white/10">
+        📄 View Specs Doc
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       SECTION 1: STATUS INDICATORS & VARIANTS
+       ========================================== -->
+  <section class="space-y-4">
+    <div class="flex items-center justify-between">
+      <h2 class="text-lg font-bold text-white flex items-center gap-2">
+        <span>1. Status Indicators (Component: `Status_Badge`)</span>
+      </h2>
+      <span class="text-xs text-slate-400 font-mono">Variants: Normal | Warning | Critical | Maintenance</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      
+      <!-- Normal -->
+      <div class="glass-card p-5 rounded-2xl space-y-3">
+        <div class="text-xs text-slate-400 font-mono">STATE: NORMAL (🟢)</div>
+        <div class="py-2">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-mono font-bold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>OPTIMAL / NORMAL</span>
+          </span>
+        </div>
+        <div class="text-[11px] text-slate-400">For trains operating within baseline parameters (&gt;99% health).</div>
+        <button onclick="copySnippet('badge-normal')" class="w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-cyan-300 text-xs font-mono">Copy SVG for Figma</button>
+      </div>
+
+      <!-- Warning -->
+      <div class="glass-card p-5 rounded-2xl space-y-3">
+        <div class="text-xs text-slate-400 font-mono">STATE: WARNING (🟠)</div>
+        <div class="py-2">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-mono font-bold">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span>ELEVATED / WARNING</span>
+          </span>
+        </div>
+        <div class="text-[11px] text-slate-400">For secondary parameter drift (thermal gradient, cell latency).</div>
+        <button onclick="copySnippet('badge-warning')" class="w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-cyan-300 text-xs font-mono">Copy SVG for Figma</button>
+      </div>
+
+      <!-- Critical -->
+      <div class="glass-card p-5 rounded-2xl space-y-3 border-rose-500/30">
+        <div class="text-xs text-rose-400 font-mono font-bold">STATE: CRITICAL (🔴)</div>
+        <div class="py-2">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/50 text-xs font-mono font-bold shadow-lg shadow-rose-500/20 animate-pulse">
+            <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+            <span>CRITICAL ANOMALY</span>
+          </span>
+        </div>
+        <div class="text-[11px] text-slate-400">Pulsing beacon for hydraulic loss or track hazard mitigation.</div>
+        <button onclick="copySnippet('badge-critical')" class="w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-cyan-300 text-xs font-mono">Copy SVG for Figma</button>
+      </div>
+
+      <!-- Maintenance -->
+      <div class="glass-card p-5 rounded-2xl space-y-3">
+        <div class="text-xs text-slate-400 font-mono">STATE: MAINTENANCE (🔧)</div>
+        <div class="py-2">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/40 text-xs font-mono font-bold">
+            <span class="w-2 h-2 rounded-full bg-violet-400"></span>
+            <span>DEPOT INSPECTION</span>
+          </span>
+        </div>
+        <div class="text-[11px] text-slate-400">Scheduled workshop maintenance or firmware flash.</div>
+        <button onclick="copySnippet('badge-maint')" class="w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-cyan-300 text-xs font-mono">Copy SVG for Figma</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 2: SEARCH & FILTER CONTROLS
+       ========================================== -->
+  <section class="space-y-4">
+    <div class="flex items-center justify-between">
+      <h2 class="text-lg font-bold text-white">2. Search, Filter Bars & Navigation Buttons</h2>
+      <span class="text-xs text-slate-400 font-mono">Component: `Search_Filter_Group`</span>
+    </div>
+
+    <div class="glass-card p-6 rounded-2xl space-y-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        
+        <!-- Search Input Component -->
+        <div class="relative w-full md:w-80">
+          <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 text-sm">🔍</span>
+          <input type="text" value="TRN-047" class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/5 border border-cyan-400/40 text-xs text-white shadow-lg shadow-cyan-500/10 font-mono" placeholder="Search...">
+        </div>
+
+        <!-- Filter Pills Group -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <button class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold bg-cyan-500 text-black shadow-lg shadow-cyan-500/30">ALL (142)</button>
+          <button class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-white/5 text-rose-400 hover:bg-white/10">🔴 CRITICAL (1)</button>
+          <button class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-white/5 text-amber-400 hover:bg-white/10">🟠 WARNING (2)</button>
+          <button class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold bg-white/5 text-emerald-400 hover:bg-white/10">🟢 NORMAL (135)</button>
+        </div>
+
+        <!-- Action Trigger -->
+        <button class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-indigo-600 text-black font-bold text-xs shadow-lg shadow-cyan-500/25">
+          + Add Monitored Train
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 3: EDGE STATES (EMPTY / LOADING / ERROR)
+       ========================================== -->
+  <section class="space-y-4">
+    <div class="flex items-center justify-between">
+      <h2 class="text-lg font-bold text-white">3. System Edge States (Empty, Loading & Error)</h2>
+      <span class="text-xs text-rose-400 font-mono font-bold">Requirement #3 Showcase</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- 3A. Loading Skeleton State -->
+      <div class="glass-card p-6 rounded-2xl space-y-4 border-cyan-500/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono font-bold text-cyan-300">STATE: LOADING (SKELETON)</span>
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+        </div>
+        <p class="text-xs text-slate-400">Displayed while MQTT telemetry buffers or edge socket establishes handshake.</p>
+
+        <!-- Skeleton Items -->
+        <div class="space-y-3 pt-2">
+          <div class="h-6 w-3/4 skeleton-shimmer rounded-lg"></div>
+          <div class="h-16 w-full skeleton-shimmer rounded-xl"></div>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="h-10 skeleton-shimmer rounded-lg"></div>
+            <div class="h-10 skeleton-shimmer rounded-lg"></div>
+            <div class="h-10 skeleton-shimmer rounded-lg"></div>
+          </div>
+          <div class="h-24 w-full skeleton-shimmer rounded-xl"></div>
+        </div>
+      </div>
+
+      <!-- 3B. Empty State (Zero Alerts) -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center space-y-4">
+        <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-3xl">
+          🛡️
+        </div>
+        <div>
+          <div class="text-xs font-mono font-bold text-emerald-400">STATE: EMPTY (ALL OPTIMAL)</div>
+          <h3 class="text-base font-bold text-white mt-1">Zero Open Incidents</h3>
+          <p class="text-xs text-slate-400 mt-1 max-w-xs leading-relaxed">
+            All 142 express lines and 6 corridors are operating within safe ASIL-D threshold limits.
+          </p>
+        </div>
+        <button class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-cyan-300 text-xs font-mono transition border border-cyan-500/20">
+          View Archived Logs (18 Resolved)
+        </button>
+      </div>
+
+      <!-- 3C. Error / Connection Lost State -->
+      <div class="glass-card p-6 rounded-2xl space-y-4 border-rose-500/40 bg-rose-950/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono font-bold text-rose-400">STATE: ERROR (OFFLINE)</span>
+          <span class="text-base">⚠️</span>
+        </div>
+        <h3 class="text-base font-bold text-white">Edge Gateway Handshake Failed</h3>
+        <p class="text-xs text-rose-200/80 leading-relaxed">
+          WebSocket telemetry stream timed out on gateway <code>GW-WEST-09</code>. Last heartbeat packet received 42s ago.
+        </p>
+
+        <div class="p-3 rounded-xl bg-black/40 border border-rose-500/30 font-mono text-[11px] text-rose-300 space-y-1">
+          <div>ERR_SOCKET_TIMEOUT (504)</div>
+          <div>RETRY_ATTEMPT: 3 / 5</div>
+        </div>
+
+        <button onclick="alert('Retrying secure TLS handshake with edge station...');" class="w-full py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs transition shadow-lg shadow-rose-600/30 flex items-center justify-center gap-2">
+          <span>🔄 Re-establish Edge Telemetry</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 4: FIGMA AUTO-LAYOUT INSTRUCTIONS
+       ========================================== -->
+  <section class="glass-card p-6 rounded-2xl space-y-4">
+    <h2 class="text-lg font-bold text-white">4. Figma Implementation Blueprint (Auto-Layout Specs)</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono text-slate-300">
+      <div class="p-4 rounded-xl bg-white/5 space-y-2">
+        <div class="text-cyan-400 font-bold uppercase">Grid Frame Settings</div>
+        <div>Width: 1440px Desktop</div>
+        <div>Sidebar: 256px Fixed</div>
+        <div>Margin: 24px · Gutter: 16px</div>
+        <div>Content: Auto-Fill (Fill container)</div>
+      </div>
+      <div class="p-4 rounded-xl bg-white/5 space-y-2">
+        <div class="text-emerald-400 font-bold uppercase">Auto-Layout Rules</div>
+        <div>Card Padding: 20px / 24px</div>
+        <div>Item Spacing: 12px / 16px</div>
+        <div>Corner Radius: 16px (24px for modals)</div>
+        <div>Stroke: 1px inside #00F2FE at 12%</div>
+      </div>
+      <div class="p-4 rounded-xl bg-white/5 space-y-2">
+        <div class="text-violet-400 font-bold uppercase">Figma Variables Mapping</div>
+        <div>Color Tokens: `color/brand/cyan`</div>
+        <div>Surface Tokens: `surface/elevated`</div>
+        <div>Status Tokens: `status/critical/glow`</div>
+        <div>Typography: `type/mono/caption`</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function copySnippet(type) {
+      const toast = document.getElementById('copy-toast');
+      navigator.clipboard.writeText(`<!-- RailSense Pro Figma Component: ${type} -->\n<div class="badge-${type}">STATUS_${type.toUpperCase()}</div>`);
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>
